@@ -38,6 +38,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     //    public static final String COLUMN_ID = "ID";
     public static final String COLUMN_NAME_USER = "name";
     public static final String COLUMN_EMAIL_USER="email";
+    public static final String COLUMN_PASSWORD_USER="password";
     public static final String COLUMN_JK_USER = "jenis_kelamin";
     public static final String COLUMN_NO_TELP_USER="no_telp";
     public static final String COLUMN_TANGGAL_LAHIR_USER = "tanggal_lahir";
@@ -69,6 +70,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 COLUMN_ID+" integer primary key autoincrement," +
                 COLUMN_NAME_USER+" text," +
                 COLUMN_EMAIL_USER+" text," +
+                COLUMN_PASSWORD_USER+" text," +
                 COLUMN_JK_USER+" text," +
                 COLUMN_NO_TELP_USER+" text," +
                 COLUMN_TANGGAL_LAHIR_USER+" text);");
@@ -83,12 +85,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     //Untuk Tabel Data User
-    public boolean insertDataUser(int id,String name,String email,String jenis_kelamin, String no_telp,String tanggal_lahir){
+    public boolean insertDataUser(String name,String email,String password,String jenis_kelamin, String no_telp,String tanggal_lahir){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(COLUMN_ID,id);
         contentValues.put(COLUMN_NAME_USER,name);
         contentValues.put(COLUMN_EMAIL_USER,email);
+        contentValues.put(COLUMN_PASSWORD_USER,password);
         contentValues.put(COLUMN_JK_USER,jenis_kelamin);
         contentValues.put(COLUMN_NO_TELP_USER,no_telp);
         contentValues.put(COLUMN_TANGGAL_LAHIR_USER,tanggal_lahir);
