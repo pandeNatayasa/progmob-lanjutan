@@ -2,6 +2,7 @@ package com.tr.nata.project_progmob;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -19,6 +20,10 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+//        untuk mengganti warna dari actionbar menggunakan drawable
+//        ActionBar actionBar = getSupportActionBar();
+//        actionBar.setBackgroundDrawable(getResources().getDrawable(R.drawable.actionbar_bg));
 
         et_email=findViewById(R.id.etMail);
         et_password=findViewById(R.id.etPassword);
@@ -48,5 +53,8 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
     }
+
 }
